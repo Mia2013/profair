@@ -12,7 +12,7 @@ export default function Home() {
     },
     {
       name: "100% Garancia",
-      text: "Az elvégzett munkánkra garanciát vállalunk",
+      text: "Az elvégzett munkánkra garanciát vállalunk.",
     },
     {
       name: "Gyorsaság",
@@ -25,7 +25,7 @@ export default function Home() {
   ];
 
   return (
-    <Grid container className="home-container">
+    <Grid container columns="12" className="home-container">
       <Grid item xs={12}>
         <Typography
           noWrap
@@ -37,13 +37,13 @@ export default function Home() {
         ></Typography>
       </Grid>
       <Grid item xs={12} sx={{ mx: "auto" }}>
-    
-      <Typography variant="h2" sx={{ textAlign: "center", my: 5 }}>
-        Miért épp minket válasszon?
-      </Typography>
+        <Typography variant="h2" sx={{ textAlign: "center", my: 5 }}>
+          Miért épp minket válasszon?
+        </Typography>
       </Grid>
-      <Box>
+      <Grid container xs={9} sx={{mx: "auto", mt:16}}>
         {homeContent.map((item) => (
+      <Grid item xs={10} sm={5} lg={3} spacing={8}>
           <Box
             display="flex"
             flexDirection="column"
@@ -53,9 +53,13 @@ export default function Home() {
             <Typography variant="h4">{item.name}</Typography>
             <Typography variant="h6">{item.text}</Typography>
           </Box>
+      </Grid>
         ))}
-      </Box>
+</Grid>
+        <Grid item >
       <Typography variant="h3">Bízza a profikra, bízza a ProfAirre!</Typography>
+
+        </Grid>
     </Grid>
   );
 }
