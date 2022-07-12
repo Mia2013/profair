@@ -1,51 +1,49 @@
-import { Routes, Route } from "react-router-dom";
-import "./App.css";
-import "fontsource-roboto";
-import Grid from "@mui/material/Grid";
+import React, { useEffect } from "react";
 
-import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
+import "./App.scss";
+import "fontsource-roboto";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import Navbar from "./components/Nav/Nav";
+import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import AirConditioners from "./pages/AirConditioners";
 import Service from "./pages/Service";
 import Price from "./pages/Price";
 import Contact from "./pages/Contact";
-import Navbar from "./components/Nav/Nav";
+
+
 
 function App() {
-  return (
-    <Grid container className="App">
-      <Grid item xs={12}>
-        <Navbar xs={12} />
-      </Grid>
-      <Grid item xs={12} sx={{mt: 15, mx: "auto",}}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="rolunk" element={<About />} />
-          <Route path="klimak" element={<AirConditioners />} />
-          <Route path="szolgaltatasok" element={<Service />} />
-          <Route path="arak" element={<Price />} />
-          <Route path="kapcsolat" element={<Contact />} />
-        </Routes>
-      </Grid>
-    </Grid>
-  );
-}
+  useEffect(() => {
+    AOS.init({
+      offset: 120,
+      duration: 3000,
+      useClassNames: false,
+      throttleDelay: 99,
+      once: false,
+      anchorPlacement: "top-bottom",
+    });
+    AOS.refresh();
+  }, []);
 
-{
-  /* <Grid container spacing={2}>
-  <Grid item xs={8}>
-    <Item>xs=8</Item>
-  </Grid>
-  <Grid item xs={4}>
-    <Item>xs=4</Item>
-  </Grid>
-  <Grid item xs={4}>
-    <Item>xs=4</Item>
-  </Grid>
-  <Grid item xs={8}>
-    <Item>xs=8</Item>
-  </Grid>
-</Grid> */
+  return (
+      <div className="App">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="rolunk" element={<About />} />
+            <Route path="klimak" element={<AirConditioners />} />
+            <Route path="szolgaltatasok" element={<Service />} />
+            <Route path="arak" element={<Price />} />
+            <Route path="kapcsolat" element={<Contact />} />
+          </Routes>
+        </main>
+      </div>
+  );
 }
 
 export default App;

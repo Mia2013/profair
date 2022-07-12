@@ -15,7 +15,7 @@ const FirstLineAppbar = () => {
         disableGutters
         sx={{ flexDirection: { xs: "column", sm: "row" } }}
       >
-        <Box component={Link} href="/" sx={{ my: 1 }}>
+        <Box component={Link} href="/" sx={{ my: 2 }}>
           <Typography
             noWrap
             component="img"
@@ -71,6 +71,7 @@ const FirstLineAppbar = () => {
                 color: "primary",
                 textDecoration: "none",
                 fontSize: "0.8rem",
+                ml: 2,
               }}
               component="a"
               noWrap

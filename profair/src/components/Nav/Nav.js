@@ -10,7 +10,6 @@ const Navbar = () => {
 
   return (
          <>
-
       <CssBaseline />
         <AppBar position="fixed">
           <FirstLineAppbar />
