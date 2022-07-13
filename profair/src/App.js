@@ -1,20 +1,21 @@
-import React, { useEffect } from "react";
-
+import React, { useEffect, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
 import "fontsource-roboto";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 import Navbar from "./components/Nav/Nav";
-import Home from "./pages/Home/Home";
-import About from "./pages/About";
-import AirConditioners from "./pages/AirConditioners";
-import Service from "./pages/Service";
-import Price from "./pages/Price";
-import Contact from "./pages/Contact";
+import FixedBottomNavigation from "./components/Footer"
+import Loading from "./components/Loading/Loading";
 
-
+const Home = React.lazy(() => import("./pages/Home/Home"));
+const About = React.lazy(() => import("./pages/About"));
+const AirConditioners = React.lazy(() => import("./pages/AirConditioners"));
+const Service = React.lazy(() => import("./pages/About"));
+const Price = React.lazy(() => import("./pages/Price"));
+const Contact = React.lazy(() => import("./pages/Contact"));
 
 function App() {
   useEffect(() => {
@@ -30,8 +31,9 @@ function App() {
   }, []);
 
   return (
-      <div className="App">
-        <Navbar />
+    <div className="App">
+      <Navbar />
+      <Suspense fallback={<Loading />}>
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -42,7 +44,9 @@ function App() {
             <Route path="kapcsolat" element={<Contact />} />
           </Routes>
         </main>
-      </div>
+      </Suspense>
+      <FixedBottomNavigation />
+    </div>
   );
 }
 

@@ -11,7 +11,7 @@ export default function Loading() {
       justifyContent="center"
       style={{ minHeight: "100vh" }}
     >
-      <Grid item xs={3}>
+      <Grid item >
         <Typography variant="h3" color="primary">
           Betöltés...
           <PacmanLoader variant="h2" color="rgba(25, 118, 210, 1)" size={40} />

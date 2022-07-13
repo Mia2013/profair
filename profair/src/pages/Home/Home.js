@@ -1,13 +1,11 @@
-import React, { Suspense } from "react";
-import Loading from "../../components/Loading";
-const HomeContent = React.lazy(() => import("./HomeContent"));
+import HomeContent from "./HomeContent";
 
 export default function Home() {
   const homeContent = [
     {
       name: "Ingyenes felmérés",
       text: "Budapesten és Pest megyében nem számolunk fel kiszállási díjat a felmérésért.",
-      icon: "",
+      icon: "bi bi-coin",
     },
     {
       name: "100% Garancia",
@@ -27,8 +25,6 @@ export default function Home() {
   ];
 
   return (
-    <Suspense fallback={<Loading />}>
       <HomeContent content={homeContent} />
-    </Suspense>
   );
 }
