@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 
 export default function HomeContent({ content }) {
   return (
-    <Grid container columns="12" className="home-container">
+    <Grid container columns="12" className="home-container" >
       <Grid item xs={12}>
         <Typography
           noWrap
@@ -22,7 +22,7 @@ export default function HomeContent({ content }) {
           <Typography variant="h2" sx={{ textAlign: "center", my: 5 }}>
             Miért épp minket válasszon?
           </Typography>
-          <Typography variant="p" sx={{ textAlign: "center", my: 5 }}>
+          <Typography variant="body1" sx={{ textAlign: "center", my: 5 }}>
             Több, mint 10 éves szakmai tapasztalattal állunk ügyfeleink
             rendelkezésére. A klímaszerelés mellett szolgáltatásainkat
             kibővítettük villanyszereléssel is, hogy Önöknek még teljeskörűbb

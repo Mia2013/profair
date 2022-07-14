@@ -50,7 +50,7 @@ export default function AirConditioners() {
         >
           Klímák
         </Typography>
-        <Typography variant="p" sx={{ mx: "auto", fontWeight: "bold" }}>
+        <Typography variant="body1" sx={{ mx: "auto", fontWeight: "bold" }}>
           Az általunk forgalmazott klímák megbízható, minőségi készülékek,
           szükség esetén megfelelő alkatrész ellátással és szervíz háttérrel.
           Amennyiben nem találta meg az alább felsorolt termékek között az Önnek

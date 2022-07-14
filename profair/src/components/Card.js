@@ -12,6 +12,7 @@ export default function MediaCard({ name, img, description, price }) {
           component="img"
           image={`${process.env.PUBLIC_URL}/assets/airConditioners/${img}.jpg`}
           alt={name}
+          
         />
         <CardContent>
           <Typography
@@ -27,7 +28,7 @@ export default function MediaCard({ name, img, description, price }) {
           </Typography>
           <Typography
             gutterBottom
-            variant="p"
+            variant="body1"
             component="div"
             color="primary"
             fontWeight="bolder"

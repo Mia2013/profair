@@ -19,10 +19,10 @@ export default function FixedBottomNavigation() {
               <Box borderBottom={1}>ProfAir Kft.</Box>
 
               <Box>
-                <Typography variant="p">Cégjegyzékszám 13-09-205696</Typography>
+                <Typography variant="body1">Cégjegyzékszám 13-09-205696</Typography>
               </Box>
               <Box>
-                <Typography variant="p">Adószám 27941175-2-13</Typography>
+                <Typography variant="body1">Adószám 27941175-2-13</Typography>
               </Box>
             </Grid>
           </Grid>
@@ -42,10 +42,10 @@ export default function FixedBottomNavigation() {
               <Box borderBottom={1}>ProfAir Kft.</Box>
 
               <Box>
-                <Typography variant="p">Cégjegyzékszám 13-09-205696</Typography>
+                <Typography variant="body1">Cégjegyzékszám 13-09-205696</Typography>
               </Box>
               <Box>
-                <Typography variant="p">Adószám 27941175-2-13</Typography>
+                <Typography variant="body1">Adószám 27941175-2-13</Typography>
               </Box>
             </Grid>
           </Grid> */}

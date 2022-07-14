@@ -2,6 +2,7 @@ import React, { useEffect, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
 import "fontsource-roboto";
+import Box from "@mui/material/Box";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -34,7 +35,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Suspense fallback={<Loading />}>
-        <main>
+        <Box  sx={{width: 1, mt: {xs: 20, sm: 18, md: 16, lg: 16, xl: 17}}}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="rolunk" element={<About />} />
@@ -43,7 +44,7 @@ function App() {
             <Route path="arak" element={<Price />} />
             <Route path="kapcsolat" element={<Contact />} />
           </Routes>
-        </main>
+        </Box>
       </Suspense>
       <FixedBottomNavigation />
     </div>
