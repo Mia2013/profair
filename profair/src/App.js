@@ -14,9 +14,10 @@ import Loading from "./components/Loading/Loading";
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const About = React.lazy(() => import("./pages/About"));
 const AirConditioners = React.lazy(() => import("./pages/AirConditioners"));
-const Service = React.lazy(() => import("./pages/About"));
+const Service = React.lazy(() => import("./pages/Service"));
 const Price = React.lazy(() => import("./pages/Price"));
-const Contact = React.lazy(() => import("./pages/Contact"));
+const Contact = React.lazy(() => import("./pages/Contact/Contact"));
+const PrivacyPolicy = React.lazy(() => import("./pages/PrivacyPolicy"));
 
 function App() {
   useEffect(() => {
@@ -35,7 +36,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Suspense fallback={<Loading />}>
-        <Box  sx={{width: 1, mt: {xs: 20, sm: 18, md: 16, lg: 16, xl: 17}}}>
+        <Box  sx={{width: 1, mt: {xs: 21, sm: 18, md: 16, lg: 16, xl: 17}}}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="rolunk" element={<About />} />
@@ -43,6 +44,7 @@ function App() {
             <Route path="szolgaltatasok" element={<Service />} />
             <Route path="arak" element={<Price />} />
             <Route path="kapcsolat" element={<Contact />} />
+            <Route path="adatvedelem" element={<PrivacyPolicy />} />
           </Routes>
         </Box>
       </Suspense>

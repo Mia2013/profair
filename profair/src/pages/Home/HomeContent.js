@@ -3,10 +3,9 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-
-export default function HomeContent({ content }) {
+export default function HomeContent({ items }) {
   return (
-    <Grid container columns="12" className="home-container" >
+    <Grid container columns="12" className="home-container">
       <Grid item xs={12}>
         <Typography
           noWrap
@@ -17,8 +16,8 @@ export default function HomeContent({ content }) {
           src={`${process.env.PUBLIC_URL}/assets/home-cover.jpg`}
         ></Typography>
       </Grid>
-      <Container maxWidth="xl" data-aos="fade-up">
-        <Grid item xs={10} sx={{ mx: "auto" }}>
+      <Container maxWidth="xl">
+        <Grid item xs={10} sx={{ mx: "auto" }} data-aos="fade-up">
           <Typography variant="h2" sx={{ textAlign: "center", my: 5 }}>
             Miért épp minket válasszon?
           </Typography>
@@ -35,17 +34,26 @@ export default function HomeContent({ content }) {
           container
           item
           xs={9}
-          sx={{ mx: "auto", mt: 16 }}
+          sx={{ mx: "auto", mt: {xs: 2, sm:7} }}
           gap={2}
           data-aos="fade-down"
           data-aos-easing="linear"
           data-aos-duration="1500"
         >
-          {content.map((item) => (
-            <Grid item xs={12} sm={5} lg={2} sx={{ mx: "auto" }}>
-              <Box key={item.name} sx={{ textAlign: "center", my: 5 }}>
-
-                <Typography variant="h4">{item.name}</Typography>
+          {items.map((item) => (
+            <Grid
+              item
+              xs={12}
+              sm={5}
+              lg={2}
+              sx={{ mx: "auto" }}
+              data-aos="flip-left"
+            >
+              <Box key={item.name} sx={{ textAlign: "center", my: {xs: 2, sm: 5} }}>
+                {item.icon}
+                <Typography variant="h4" sx={{ mt: {xs: 2, sm: 5} }}>
+                  {item.name}
+                </Typography>
                 <Typography variant="h6">{item.text}</Typography>
               </Box>
             </Grid>

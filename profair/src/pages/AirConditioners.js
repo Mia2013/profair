@@ -37,14 +37,14 @@ export default function AirConditioners() {
     },
   ];
   return (
-    <Grid container columns="12">
+    <Grid container columns="12" sx={{mt: 20, pb: 10}}  >
       <Grid
         item
         xs={12}
-        sx={{ mx: { xs: "30px", md: "150px", p: "0", mt: 10 }, mb: 10 }}
+        sx={{ mx: { xs: "30px", md: "150px", p: "0" }, mb: 10 }}
       >
         <Typography
-          variant="h2"
+          variant="h3"
           sx={{ textAlign: "center", my: 5, fontWeight: "bold" }}
           color="primary"
         >
