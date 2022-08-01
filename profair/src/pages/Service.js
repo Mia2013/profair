@@ -27,7 +27,7 @@ const styles = {
 export default function Service() {
   return (
     <Grid       style={styles.contactContainer}
-     container columns="12" sx={{ mt: 20, pb: 10 }}>
+     container columns="12" sx={{ mt: 15, pb: 10 }}>
       <Grid
         item
         xs={12}

@@ -37,7 +37,7 @@ export default function AirConditioners() {
     },
   ];
   return (
-    <Grid container columns="12" sx={{mt: 20, pb: 10}}  >
+    <Grid container columns="12" sx={{mt: 15, pb: 10}}  >
       <Grid
         item
         xs={12}

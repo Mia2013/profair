@@ -3,6 +3,7 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import Container from "@mui/material/Container";
 import { Button, Typography, Box } from "@mui/material";
+import validator from "validator";
 
 import SendIcon from "@mui/icons-material/Send";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -10,6 +11,8 @@ import Checkbox from "@mui/material/Checkbox";
 
 export default function ContactForm({ styles }) {
   const [formData, setFormData] = React.useState({});
+  const [error, setError] = React.useState(false);
+  const [errorMessage, setErrorMessage] = React.useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -20,6 +23,45 @@ export default function ContactForm({ styles }) {
   };
 
   console.log(formData);
+
+  // function formValidation(formdata) {
+  //   const { name, email, address, message, phoneNumber } = formData;
+  //   setErrorMessage("");
+  //   if (!name || !email || !address || !message || !phoneNumber) {
+  //     setErrorMessage("Az összes mező kitöltése kötelező");
+  //     setError(true);
+  //     return false;
+  //   }
+  //   if (!validator.isLength(name, { min: 3, max: 40 })) {
+  //     setErrorMessage("Minimum 3, maximum 40 karakter hosszú lehet");
+  //     setError(true);
+  //     return false;
+  //   }
+  //   if (!validator.isLength(message, { min: 3, max: 500 })) {
+  //     setErrorMessage("Minimum 3, maximum 500 karakter hosszú lehet");
+  //     setError(true);
+  //     return false;
+  //   }
+  //   if (!validator.isLength(address, { min: 3, max: 80 })) {
+  //     setErrorMessage("Minimum 3, maximum 80 karakter hosszú lehet");
+  //     setError(true);
+  //     return false;
+  //   }
+
+  //   if (!validator.isEmail(email)) {
+  //     setErrorMessage("Valós e-mail címet adjon meg");
+  //     setError(true);
+  //     return false;
+  //   }
+
+  //   setError(false);
+  //   return true;
+  // }
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+
+  };
 
   return (
     <Box
@@ -41,10 +83,12 @@ export default function ContactForm({ styles }) {
         <FormControl
           fullWidth
           sx={{
-            "& > :not(style)": { mx: "30px", mt: 1 },
+            "& > :not(style)": { mx: "30px", mt: 2 },
           }}
           noValidate
           autoComplete="off"
+          onSubmit={handleOnSubmit}
+
         >
           <TextField
             id="outlined-name"
@@ -53,6 +97,8 @@ export default function ContactForm({ styles }) {
             value={formData.name}
             onChange={handleChange}
             required
+            error={error}
+            helperText={errorMessage ? errorMessage : ""}
           />
 
           <TextField
@@ -62,6 +108,8 @@ export default function ContactForm({ styles }) {
             value={formData.email}
             onChange={handleChange}
             required
+            error={error}
+            helperText={errorMessage ? errorMessage : ""}
           />
           <TextField
             id="outlined-name"
@@ -70,15 +118,22 @@ export default function ContactForm({ styles }) {
             value={formData.phoneNumber}
             onChange={handleChange}
             required
+            error={error}
+            helperText={errorMessage ? errorMessage : ""}
           />
           <TextField
             id="outlined-name"
             label="Cím (település, utca)"
             name="address"
-            value={formData.phoneNumber}
+            value={formData.address}
             onChange={handleChange}
-            helperText="Ahova a klímát szeretné beszereltetni"
+            helperText={
+              errorMessage
+                ? errorMessage
+                : "Ahova a klímát szeretné beszereltetni"
+            }
             required
+            error={error}
           />
           <TextField
             id="outlined-name"
@@ -90,16 +145,17 @@ export default function ContactForm({ styles }) {
             multiline
             minRows={2}
             maxRows={6}
+            error={error}
+            helperText={errorMessage ? errorMessage : ""}
           />
-          <FormControlLabel
+          {/* <FormControlLabel
             control={<Checkbox />}
             label={
               <Typography variant="body1">
-                Elolvastam és megértettem az 
+                Elolvastam és megértettem az
                 <Typography
                   sx={{
-
-                    m: 1
+                    m: 1,
                   }}
                   component="a"
                   variant="body1"
@@ -110,12 +166,13 @@ export default function ContactForm({ styles }) {
                 foglaltakat
               </Typography>
             }
-          />
+          /> */}
 
           <Button
             variant="contained"
-            endIcon={<SendIcon />}
-            sx={{ width: "150px" }}
+            endIcon={<SendIcon  />}
+            sx={{ width: "150px", my: 2 }}
+            type="submit"
           >
             Küldés
           </Button>

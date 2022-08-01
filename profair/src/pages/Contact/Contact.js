@@ -34,13 +34,27 @@ export default function Contact() {
 
   // console.log(formData);
 
+  // const contactInfo = [
+  //   { name: "Telefonszám",
+  //     data: "+36 20 559 0387",
+  //     href: "tel:+3620-559-0387",
+  //     icon: '<LocalPhoneIcon sx={{ mr: 1, pt: 0.5 }} color="primary" />'
+  //   },
+  //   {
+  //     name: "Email cím",
+  //     data: "budavari.balint@profair.hu",
+  //     href: "mailto: budavari.balint@profair.hu",
+  //     icon: '<EmailIcon sx={{ mr: 1, pt: 0.5 }} color="primary" />'
+  //   }
+  // ]
+
   return (
   
     <Grid
       container
       style={styles.contactContainer}
       spacing={2}
-      sx={{mt: 20, pb: 10}}    >
+      sx={{mt: 15, pb: 10}}    >
       <Grid item xs={12} sx={{ mx: "auto" }}>
         <Typography
           variant="h3"

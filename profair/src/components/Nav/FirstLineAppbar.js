@@ -21,7 +21,7 @@ const FirstLineAppbar = () => {
             component="img"
             sx={{
               display: { xs: "none", sm: "flex" },
-              width: { sm: "100%", md: "75%", lg: "40%" },
+              width: { sm: "70%", md: "50%", lg: "30%" },
             }}
             src={`${process.env.PUBLIC_URL}/assets/Profair.png`}
           ></Typography>
@@ -42,7 +42,7 @@ const FirstLineAppbar = () => {
             component="img"
             src={`${process.env.PUBLIC_URL}/assets/Profair.png`}
             sx={{
-              width: "60%",
+              width: "50%",
               mb: 2,
             }}
           ></Typography>

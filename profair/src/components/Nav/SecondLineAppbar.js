@@ -95,7 +95,14 @@ export default function SecondLineAppBar() {
           </Menu>
         </Box>
 
-        <Typography sx={{ typography: { xs: 'h6',  md: "h5", lg: "h3" },  display: {sm: "none", md: "inline"} }}>Klíma- és villanyszerelés</Typography>
+        <Typography
+          sx={{
+            typography: { xs: "h6", md: "h5", lg: "h5" },
+            display: { sm: "none", md: "inline" },
+          }}
+        >
+          Klíma- és villanyszerelés
+        </Typography>
         <Box
           sx={{
             flexGrow: 2,

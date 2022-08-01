@@ -4,7 +4,6 @@ import { styled } from "@mui/material/styles";
 
 import { Typography, Box, Avatar } from "@mui/material";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
-import { PhoneLink, EmailLink } from "../../components/LinkTags";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 
@@ -56,10 +55,9 @@ export default function ContactContent() {
                 href="tel:+3620-559-0387"
               >
                 <LocalPhoneIcon sx={{ mr: 1, pt: 0.5 }} color="primary" />
-                Telefonszám: +36 20 559 0387
+                <span>Telefonszám: </span>
+                +36 20 559 0387
               </Typography>
-              {/* <PhoneLink variant={"h6"} />
-              <EmailLink variant={"h6"}/> */}
 
               <Typography
                 color="text.primary"
@@ -71,12 +69,15 @@ export default function ContactContent() {
                 variant="h6"
                 href="mailto: budavari.balint@profair.hu"
               >
-                <EmailIcon sx={{ mr: 1, pt: 0.5 }} color="primary" /> E-mail
-                cím: budavari.balint@profair.hu
+                <EmailIcon sx={{ mr: 1, pt: 0.5 }} color="primary" />
+                <span>E-mail cím: </span>
+                budavari.balint@profair.hu
               </Typography>
               <Typography variant="h6">
-                <FmdGoodIcon sx={{ mr: 1, pt: 0.5 }} color="primary" />{" "}
-                Szolgáltatási terület: Budapest és Pest megye elsősorban
+                <FmdGoodIcon sx={{ mr: 1, pt: 0.5 }} color="primary" />
+                <span>  Szolgáltatási terület:  </span>
+
+              Budapest és Pest megye elsősorban
               </Typography>
             </Box>
           </Container>
